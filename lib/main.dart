@@ -1,3 +1,5 @@
+//import 'package:device_preview/device_preview.dart';
+//import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -14,7 +16,11 @@ Future<void> main() async {
   Hive.registerAdapter<Meeting>(MeetingAdapter());
   Hive.registerAdapter<Category>(CategoryAdapter());
   runApp(
-    const MyApp(), // Wrap your app
+    const MyApp()
+    // DevicePreview(
+    //   enabled: !kReleaseMode,
+    //   builder: (context) => MyApp(), // Wrap your app
+    // ),
   );
 }
 
@@ -29,6 +35,9 @@ class MyApp extends StatelessWidget {
             return MeetingsCubit();
           },
           child: MaterialApp(
+            // useInheritedMediaQuery: true,
+            // locale: DevicePreview.locale(context),
+            // builder: DevicePreview.appBuilder,
             theme: ThemeData(
               scrollbarTheme: ScrollbarThemeData(
                 minThumbLength: 20,

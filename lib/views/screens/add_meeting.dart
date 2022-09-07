@@ -7,6 +7,7 @@ import 'package:promina_agency_task/controllers/meetings_cubit.dart';
 import 'package:promina_agency_task/models/meeting.dart';
 import 'package:promina_agency_task/shared/constants.dart';
 import 'package:promina_agency_task/views/compnents/add_meeting_appbar.dart';
+import 'package:promina_agency_task/views/compnents/create_new_task_text.dart';
 import 'package:promina_agency_task/views/compnents/custom_textfield.dart';
 import 'package:promina_agency_task/views/compnents/date_textfield.dart';
 import 'package:promina_agency_task/views/compnents/select_category_labels.dart';
@@ -51,23 +52,7 @@ class _AddMeetingScreenState extends State<AddMeetingScreen> {
           padding: EdgeInsets.all(25.sp),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Create New Task',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25.sp,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Icon(
-                    FontAwesomeIcons.clipboard,
-                    size: 40.sp,
-                    color: primaryColor,
-                  )
-                ],
-              ),
+              const CreateTaskText(),
               CustomTextField(
                   formKey: formKey, label: 'Task Name', controller: title),
               const SelectCategoryLabels(),
@@ -80,6 +65,7 @@ class _AddMeetingScreenState extends State<AddMeetingScreen> {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) => GestureDetector(
                       onTap: () {
+                        FocusScope.of(context).unfocus();
                         ststt(
                           () {
                             selectedCategory = Category.values[index];
@@ -113,6 +99,7 @@ class _AddMeetingScreenState extends State<AddMeetingScreen> {
               StatefulBuilder(builder: (context, ststt) {
                 return GestureDetector(
                   onTap: () {
+                    FocusScope.of(context).unfocus();
                     showDatePicker(
                             context: context,
                             initialDate: DateTime.now(),
@@ -160,6 +147,7 @@ class _AddMeetingScreenState extends State<AddMeetingScreen> {
                     StatefulBuilder(builder: (context, ststt) {
                       return GestureDetector(
                         onTap: () {
+                          FocusScope.of(context).unfocus();
                           showTimePicker(
                                   context: context,
                                   initialTime: TimeOfDay.now())
@@ -187,6 +175,7 @@ class _AddMeetingScreenState extends State<AddMeetingScreen> {
                     StatefulBuilder(builder: (context, ststt) {
                       return GestureDetector(
                         onTap: () {
+                          FocusScope.of(context).unfocus();
                           showTimePicker(
                                   context: context,
                                   initialTime: TimeOfDay.now())
@@ -234,6 +223,7 @@ class _AddMeetingScreenState extends State<AddMeetingScreen> {
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w600))),
                     onPressed: () {
+                      FocusScope.of(context).unfocus();
                       if (formKey.currentState!.validate() &&
                           date != null &&
                           startTime != null &&
