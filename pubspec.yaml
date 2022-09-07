@@ -41,7 +41,6 @@ dependencies:
   flutter_screenutil: ^5.5.4
   date_format: ^2.0.6
   date_picker_timeline_fixed: ^2.0.0
-  device_preview: ^1.1.0
   adaptive_scrollbar: ^2.1.2
 
 dev_dependencies:

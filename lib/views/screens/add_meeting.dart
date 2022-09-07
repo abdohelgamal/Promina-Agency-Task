@@ -46,7 +46,8 @@ class _AddMeetingScreenState extends State<AddMeetingScreen> {
       appBar: const MyAppBar(),
       body: Form(
         key: formKey,
-        child: SingleChildScrollView(physics: const BouncingScrollPhysics(),
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           padding: EdgeInsets.all(25.sp),
           child: Column(
             children: [
@@ -152,7 +153,7 @@ class _AddMeetingScreenState extends State<AddMeetingScreen> {
                 );
               }),
               Padding(
-                    padding: EdgeInsets.symmetric(vertical: 15.sp),
+                padding: EdgeInsets.symmetric(vertical: 15.sp),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -160,7 +161,8 @@ class _AddMeetingScreenState extends State<AddMeetingScreen> {
                       return GestureDetector(
                         onTap: () {
                           showTimePicker(
-                                  context: context, initialTime: TimeOfDay.now())
+                                  context: context,
+                                  initialTime: TimeOfDay.now())
                               .then((value) {
                             if (value != null) {
                               ststt(
@@ -186,7 +188,8 @@ class _AddMeetingScreenState extends State<AddMeetingScreen> {
                       return GestureDetector(
                         onTap: () {
                           showTimePicker(
-                                  context: context, initialTime: TimeOfDay.now())
+                                  context: context,
+                                  initialTime: TimeOfDay.now())
                               .then((value) {
                             if (value != null) {
                               ststt(

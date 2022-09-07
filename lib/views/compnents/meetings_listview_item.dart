@@ -17,7 +17,8 @@ class MeetingListViewItem extends StatelessWidget {
         alignment: Alignment.bottomRight,
         children: [
           Container(
-            margin: EdgeInsets.symmetric( horizontal: 8.sp).copyWith(bottom: 12.sp),
+            margin:
+                EdgeInsets.symmetric(horizontal: 8.sp).copyWith(bottom: 12.sp),
             padding: EdgeInsets.all(16.sp),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),

@@ -27,7 +27,10 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () {
           Navigator.pop(context);
         },
-        icon:  Icon(Icons.arrow_back_ios_new ,size: 20.sp,),
+        icon: Icon(
+          Icons.arrow_back_ios_new,
+          size: 20.sp,
+        ),
       ),
     );
   }

@@ -21,7 +21,8 @@ class CustomTextField extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(label, style: TextStyle(color: primaryColor, fontSize: 17.sp)),
-            TextFormField(style: TextStyle(fontSize: 20.sp),
+            TextFormField(
+              style: TextStyle(fontSize: 20.sp),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please Enter This Field';

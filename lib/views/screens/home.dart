@@ -41,7 +41,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
       backgroundColor: primaryColor,
       body: Column(
         children: [
@@ -57,8 +56,8 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15.sp)
-                        .copyWith(top:MediaQuery.of(context).viewPadding.top + 15.sp),
+                    padding: EdgeInsets.symmetric(horizontal: 15.sp).copyWith(
+                        top: MediaQuery.of(context).viewPadding.top + 15.sp),
                     child: Column(
                       children: [
                         Row(
@@ -89,8 +88,8 @@ class _HomeState extends State<Home> {
                           ],
                         ),
                         Padding(
-                          padding:
-                              EdgeInsets.all(8.0.sp).copyWith(top: 40.sp,bottom: 0),
+                          padding: EdgeInsets.all(8.0.sp)
+                              .copyWith(top: 40.sp, bottom: 0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -112,8 +111,7 @@ class _HomeState extends State<Home> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                       color: primaryColor,
-                                      borderRadius:
-                                          BorderRadius.circular(10)),
+                                      borderRadius: BorderRadius.circular(10)),
                                   height: 40.sp,
                                   width: 40.sp,
                                   child: Icon(
@@ -127,8 +125,8 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                         Padding(
-                          padding:
-                              EdgeInsets.all(8.0.sp).copyWith(bottom: 20.sp,top: 10.sp),
+                          padding: EdgeInsets.all(8.0.sp)
+                              .copyWith(bottom: 20.sp, top: 10.sp),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -160,9 +158,10 @@ class _HomeState extends State<Home> {
                             height: 45.sp,
                             selectionColor: primaryColor,
                             daysCount: (DateTime(DateTime.now().year,
-                                        DateTime.now().month + 1, 0)
-                                    .day -
-                                DateTime.now().day) + 1,
+                                            DateTime.now().month + 1, 0)
+                                        .day -
+                                    DateTime.now().day) +
+                                1,
                             onDateChange: (DateTime dateTime) {
                               datePickerController.animateToDate(dateTime,
                                   duration: const Duration(milliseconds: 400),
@@ -175,7 +174,8 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(20.sp).copyWith(top: MediaQuery.of(context).viewPadding.top + 10.sp),
+                    padding: EdgeInsets.all(20.sp).copyWith(
+                        top: MediaQuery.of(context).viewPadding.top + 10.sp),
                     child: Align(
                       alignment: Alignment.topRight,
                       child: Container(
@@ -203,11 +203,12 @@ class _HomeState extends State<Home> {
                   return AdaptiveScrollbar(
                     position: ScrollbarPosition.left,
                     width: 2.5.sp,
-                    sliderDefaultColor:
-                        const Color.fromARGB(255, 6, 48, 96),
+                    sliderDefaultColor: const Color.fromARGB(255, 6, 48, 96),
                     sliderHeight: 80.h,
                     underSpacing: EdgeInsets.only(
-                        bottom: 50.sp, left: 10.sp,),
+                      bottom: 50.sp,
+                      left: 10.sp,
+                    ),
                     sliderSpacing: EdgeInsets.zero,
                     controller: _scrollController,
                     child: ListView.builder(
@@ -215,24 +216,22 @@ class _HomeState extends State<Home> {
                       controller: _scrollController,
                       physics: const BouncingScrollPhysics(),
                       itemBuilder: (context, index) {
-                          return MeetingListViewItem(
-                              cubit.selectedDayMeetings[index]);
-                     
-                          
+                        return MeetingListViewItem(
+                            cubit.selectedDayMeetings[index]);
                       },
                     ),
                   );
                 } else {
                   return Center(
-                              child: Padding(
-                                padding:   EdgeInsets.all(20.sp),
-                                child: Text(
-                                  'No meetings have been added for this day',textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 20.sp),
-                                ),
-                              ),
-                            );
+                    child: Padding(
+                      padding: EdgeInsets.all(20.sp),
+                      child: Text(
+                        'No meetings have been added for this day',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 20.sp),
+                      ),
+                    ),
+                  );
                 }
               },
             ),
