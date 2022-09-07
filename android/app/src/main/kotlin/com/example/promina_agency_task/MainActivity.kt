@@ -1,4 +1,4 @@
-package com.example.promina_agency_task
+package com.prominaagency.task
 
 import io.flutter.embedding.android.FlutterActivity
 

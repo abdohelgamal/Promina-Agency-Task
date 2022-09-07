@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.promina_agency_task">
+    package="com.prominaagency.task">
    <application
-        android:label="promina_agency_task"
+        android:label="Promina Agency Task"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
