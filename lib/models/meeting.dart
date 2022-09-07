@@ -51,8 +51,8 @@ class Meeting {
     return {
       'title': title,
       'description': description,
-     // 'category': category.index,
-     'category':category,
+      // 'category': category.index,
+      'category': category,
       'date': date,
       'start': startTime,
       'end': startTime,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:promina_agency_task/shared/constants.dart';
 import 'package:promina_agency_task/views/screens/home.dart';
@@ -49,16 +50,21 @@ class _SplashScreenState extends State<SplashScreen>
       body: FadeTransition(
           opacity: _animation,
           child: Center(
-            child: Column(mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
                 FaIcon(
-                  FontAwesomeIcons.faceGrinWide,
+                  FontAwesomeIcons.faceLaughBeam,
                   color: primaryColor,
-                  size: 100,
+                  size: 100.sp,
+                ),
+                const SizedBox(
+                  height: 40,
                 ),
                 Text(
-                  'Hello Promina Team \n I hope you enjoy my app',textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white,fontSize: 25),
+                  'Hello Promina Team \n I hope you enjoy my app',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white, fontSize: 25.sp),
                 )
               ],
             ),
