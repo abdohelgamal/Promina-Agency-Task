@@ -8,22 +8,22 @@ class CreateTaskText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Create New Task',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25.sp,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Icon(
-                    FontAwesomeIcons.clipboard,
-                    size: 40.sp,
-                    color: primaryColor,
-                  )
-                ],
-              );
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          'Create New Task',
+          style: TextStyle(
+              color: Colors.black,
+              fontSize: 25.sp,
+              fontWeight: FontWeight.w500),
+        ),
+        Icon(
+          FontAwesomeIcons.clipboard,
+          size: 40.sp,
+          color: primaryColor,
+        )
+      ],
+    );
   }
 }

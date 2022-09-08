@@ -7,14 +7,14 @@ class NoMeetings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-                    child: Padding(
-                      padding: EdgeInsets.all(20.sp),
-                      child: Text(
-                        'No meetings have been added for this day',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 20.sp),
-                      ),
-                    ),
-                  );
+      child: Padding(
+        padding: EdgeInsets.all(20.sp),
+        child: Text(
+          'No meetings have been added for this day',
+          textAlign: TextAlign.center,
+          style: TextStyle(color: Colors.white, fontSize: 20.sp),
+        ),
+      ),
+    );
   }
 }

@@ -15,13 +15,12 @@ Future<void> main() async {
   await Hive.initFlutter();
   Hive.registerAdapter<Meeting>(MeetingAdapter());
   Hive.registerAdapter<Category>(CategoryAdapter());
-  runApp(
-    const MyApp()
-    // DevicePreview(
-    //   enabled: !kReleaseMode,
-    //   builder: (context) => MyApp(), // Wrap your app
-    // ),
-  );
+  runApp(const MyApp()
+      // DevicePreview(
+      //   enabled: !kReleaseMode,
+      //   builder: (context) => MyApp(), // Wrap your app
+      // ),
+      );
 }
 
 class MyApp extends StatelessWidget {

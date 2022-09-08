@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:promina_agency_task/shared/constants.dart';
 
 class ClipPathIcons extends StatelessWidget {
-   ClipPathIcons(this.isSmallScreen, {super.key});
+  ClipPathIcons(this.isSmallScreen, {super.key});
   bool isSmallScreen;
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class ClipPathIcons extends StatelessWidget {
             Icon(
               Icons.notifications_outlined,
               color: primaryColor,
-             size: isSmallScreen ? 30 : 35.sp,
+              size: isSmallScreen ? 30 : 35.sp,
             ),
           ],
         ),

@@ -63,9 +63,9 @@ class _HomeState extends State<Home> {
                               .copyWith(top: 55),
                           child: Column(
                             children: [
-                               ClipPathIcons(isSmallScreen),
-                                ClipPathFirstContents(isSmallScreen),
-                                ClipPathSecondContents(isSmallScreen),
+                              ClipPathIcons(isSmallScreen),
+                              ClipPathFirstContents(isSmallScreen),
+                              ClipPathSecondContents(isSmallScreen),
                               DateCalender(isSmallScreen)
                             ],
                           ),

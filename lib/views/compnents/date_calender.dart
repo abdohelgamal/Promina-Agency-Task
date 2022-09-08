@@ -5,15 +5,15 @@ import 'package:promina_agency_task/controllers/meetings_cubit.dart';
 import 'package:promina_agency_task/shared/constants.dart';
 
 class DateCalender extends StatelessWidget {
-DatePickerController datePickerController = DatePickerController();
+  DatePickerController datePickerController = DatePickerController();
 
-    DateCalender(this.isSmallScreen, {super.key});
+  DateCalender(this.isSmallScreen, {super.key});
   bool isSmallScreen;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height:isSmallScreen ? 95 : 80,
+      height: isSmallScreen ? 95 : 80,
       width: double.infinity,
       child: DatePicker(
         DateTime.now(),

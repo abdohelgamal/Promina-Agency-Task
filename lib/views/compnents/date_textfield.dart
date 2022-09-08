@@ -26,12 +26,11 @@ class DateTextfield extends StatelessWidget {
                   text ?? '',
                   style: TextStyle(fontSize: 15.sp),
                 ),
-            
-                  Icon(
-                    Icons.expand_more,
-                    size: 30.sp,
-                    color:isTime ? primaryColor : Colors.transparent,
-                  )
+                Icon(
+                  Icons.expand_more,
+                  size: 30.sp,
+                  color: isTime ? primaryColor : Colors.transparent,
+                )
               ],
             ),
           ],
