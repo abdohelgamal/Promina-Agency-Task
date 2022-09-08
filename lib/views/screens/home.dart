@@ -43,72 +43,73 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    bool isSmallScreen = MediaQuery.of(context).size.height < 1024;
     return Scaffold(
       backgroundColor: primaryColor,
-      body: Column(
-        children: [
-          SizedBox(
-              height: 420,
-              child: Stack(
-                alignment: Alignment.topLeft,
-                children: [
-                  ClipPath(
-                    clipper: CustomClipPath(),
-                    child: Container(
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20)
-                            .copyWith(
-                                top: 
-                                    55),
-                        child: Column(
-                          children: [
-                            const ClipPathIcons(),
-                            const ClipPathFirstContents(),
-                            const ClipPathSecondContents(),
-                            DateCalender()
-                          ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(
+                height: isSmallScreen ? 480 : 430,
+                child: Stack(
+                  alignment: Alignment.topLeft,
+                  children: [
+                    ClipPath(
+                      clipper: CustomClipPath(),
+                      child: Container(
+                        color: Colors.white,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20)
+                              .copyWith(top: 55),
+                          child: Column(
+                            children: [
+                               ClipPathIcons(isSmallScreen),
+                                ClipPathFirstContents(isSmallScreen),
+                                ClipPathSecondContents(isSmallScreen),
+                              DateCalender(isSmallScreen)
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  const UserImage()
-                ],
-              )),
-          Expanded(
-            child: BlocBuilder<MeetingsCubit, MeetingsCubitBaseState>(
-              builder: (context, state) {
-                if (state is MeetingsCubitLoadingMeetings) {
-                  return const Loading();
-                } else if (cubit.selectedDayMeetings.isNotEmpty) {
-                  return AdaptiveScrollbar(
-                    position: ScrollbarPosition.left,
-                    width: 2.5.sp,
-                    sliderDefaultColor: const Color.fromARGB(255, 6, 48, 96),
-                    sliderHeight: 80.h,
-                    underSpacing: EdgeInsets.only(
-                      bottom: 50.sp,
-                      left: 10.sp,
-                    ),
-                    sliderSpacing: EdgeInsets.zero,
-                    controller: _scrollController,
-                    child: ListView.builder(
-                      itemCount: cubit.selectedDayMeetings.length,
+                    const UserImage()
+                  ],
+                )),
+            Expanded(
+              child: BlocBuilder<MeetingsCubit, MeetingsCubitBaseState>(
+                builder: (context, state) {
+                  if (state is MeetingsCubitLoadingMeetings) {
+                    return const Loading();
+                  } else if (cubit.selectedDayMeetings.isNotEmpty) {
+                    return AdaptiveScrollbar(
+                      position: ScrollbarPosition.left,
+                      width: 2.5.sp,
+                      sliderDefaultColor: const Color.fromARGB(255, 6, 48, 96),
+                      sliderHeight: 80.h,
+                      underSpacing: EdgeInsets.only(
+                        bottom: 50.sp,
+                        left: 10.sp,
+                      ),
+                      sliderSpacing: EdgeInsets.zero,
                       controller: _scrollController,
-                      physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) {
-                        return MeetingListViewItem(
-                            cubit.selectedDayMeetings[index]);
-                      },
-                    ),
-                  );
-                } else {
-                  return const NoMeetings();
-                }
-              },
+                      child: ListView.builder(
+                        itemCount: cubit.selectedDayMeetings.length,
+                        controller: _scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        itemBuilder: (context, index) {
+                          return MeetingListViewItem(
+                              cubit.selectedDayMeetings[index]);
+                        },
+                      ),
+                    );
+                  } else {
+                    return const NoMeetings();
+                  }
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

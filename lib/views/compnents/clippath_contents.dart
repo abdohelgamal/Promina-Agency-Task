@@ -5,18 +5,21 @@ import 'package:promina_agency_task/shared/constants.dart';
 import 'package:promina_agency_task/views/screens/add_meeting.dart';
 
 class ClipPathFirstContents extends StatelessWidget {
-  const ClipPathFirstContents({super.key});
+  ClipPathFirstContents(this.isSmallScreen, {super.key});
+  bool isSmallScreen;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0.sp).copyWith(top: 50, bottom: 0),
+      padding: const EdgeInsets.all(10).copyWith(top: 50, bottom: 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             'My Task',
-            style: TextStyle(fontSize: 30.sp, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: isSmallScreen ? 25 : 30.sp,
+                fontWeight: FontWeight.bold),
           ),
           GestureDetector(
             onTap: () {
@@ -34,36 +37,38 @@ class ClipPathFirstContents extends StatelessWidget {
               child: Icon(
                 Icons.add_rounded,
                 color: Colors.white,
-                size: 20.sp,
+                size: isSmallScreen ? 16 : 20.sp,
               ),
             ),
           )
         ],
       ),
     );
-    
   }
 }
 
 class ClipPathSecondContents extends StatelessWidget {
-  const ClipPathSecondContents({super.key});
+  ClipPathSecondContents(this.isSmallScreen, {super.key});
+  bool isSmallScreen;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0.sp).copyWith(bottom: 20, top: 10),
+      padding: const EdgeInsets.all(10).copyWith(bottom: 20, top: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             'Today',
-            style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: isSmallScreen ? 17 : 22.sp,
+                fontWeight: FontWeight.bold),
           ),
           Text(
             formatDate(DateTime.now(), [D, ', ', d, ' ', MM]),
             style: TextStyle(
                 color: primaryColor,
-                fontSize: 16.sp,
+                fontSize: isSmallScreen ? 11 : 16.sp,
                 fontWeight: FontWeight.w400),
           )
         ],
